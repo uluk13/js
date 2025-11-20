@@ -1,36 +1,116 @@
-var a = 'hello'
-var b = 10
-var c
+// var a = 'hello'
+// var b = 10
+// var c
 
-console.log(c);
-console.log(typeof a);
-console.log(typeof b);
-console.log(a - b);
-console.log(Boolean(a));
-console.log(Boolean(''));
-
-
+// console.log(c);
+// console.log(typeof a);
+// console.log(typeof b);
+// console.log(a - b);
+// console.log(Boolean(a));
+// console.log(Boolean(''));
 
 
 
-var sum = prompt("Введите сумму покупки:");
-sum = Number(sum);
 
-if (isNaN(sum)) {
-  console.log("Ошибка! Введите число.");
-} else {
 
-  var discount = 0;
+// var sum = prompt("Введите сумму покупки:");
+// sum = Number(sum);
 
-  if (sum >= 100 && sum <= 500) discount = 5;
-  else if (sum > 500 && sum <= 1000) discount = 10;
-  else if (sum > 1000) discount = 15;
+// if (isNaN(sum)) {
+//   console.log("Ошибка! Введите число.");
+// } else {
 
-  var result = sum - (sum * discount / 100);
+//   var discount = 0;
 
-  console.log("Скидка:", discount + "%");
-  console.log("Итого:", result.toFixed(2));
+//   if (sum >= 100 && sum <= 500) discount = 5;
+//   else if (sum > 500 && sum <= 1000) discount = 10;
+//   else if (sum > 1000) discount = 15;
+
+//   var result = sum - (sum * discount / 100);
+
+//   console.log("Скидка:", discount + "%");
+//   console.log("Итого:", result.toFixed(2));
+// }
+
+
+const orders = [
+
+  {
+
+    id: 1,
+
+    customer: "Jhon",
+
+    items: [
+
+      { name: "Ноутбук",  price: 50000, quantity: 1 },
+
+      { name: "Мышь",     price: 1500,  quantity: 2 }
+
+    ]
+
+  },
+
+  {
+
+    id: 2,
+
+    customer: "Alan",
+
+    items: [
+
+      { name: "Телефон", price: 30000, quantity: 1 },
+
+      { name: "Чехол",   price: 1000,  quantity: 3 }
+
+    ]
+
+  },
+
+  {
+
+    id: 3,
+
+    customer: "Jane",
+
+    items: [
+
+      { name: "Клавиатура", price: 2500,  quantity: 1 },
+
+      { name: "Монитор",    price: 12000, quantity: 1 }
+
+    ]
+
+  }
+
+];
+
+var total = 0
+var maxOrderSum = 0
+var maxOrder = 0
+
+for (var i = 0; i < orders.length; i++) {
+  var order = orders[i];
+  var orderSum = 0
+
+  for (let j = 0; j < order.items.length; j++) {
+    var item = order.items[j];
+    orderSum += item.price * item.quantity
+  }
+  console.log("client", order.customer, orderSum  );
+
+  total += orderSum
+  
+  if(orderSum  > maxOrderSum) {
+    maxOrderSum = orderSum;
+    maxOrder = order
+  }
+  
 }
+
+console.log("Общий доход:", total);
+console.log("самый дорогой заказ",maxOrder.customer , - maxOrderSum);
+
 
 
 
