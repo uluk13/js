@@ -1,3 +1,6 @@
+console.log("home-work6");
+
+
 var a = 'hello'
 var b = 10
 var c
@@ -6,8 +9,7 @@ console.log(c);
 console.log(typeof a);
 console.log(typeof b);
 console.log(a - b);
-console.log(Boolean(a));
-console.log(Boolean(''));
+console.log(a == b);
 
 
 
@@ -31,6 +33,8 @@ if (isNaN(sum)) {
   console.log("Скидка:", discount + "%");
   console.log("Итого:", result.toFixed(2));
 }
+
+console.log("home-work7");
 
 
 const orders = [
@@ -93,7 +97,7 @@ for (var i = 0; i < orders.length; i++) {
   var order = orders[i];
   var orderSum = 0
 
-  for (let j = 0; j < order.items.length; j++) {
+  for (var j = 0; j < order.items.length; j++) {
     var item = order.items[j];
     orderSum += item.price * item.quantity
   }
@@ -113,5 +117,27 @@ console.log("самый дорогой заказ",maxOrder.customer , - maxOrde
 
 
 
+console.log("home-work8");
 
- console.log(0 == false)
+
+var a = [3, 7, 1, 9, 4];
+var b = [10, 20, 5];
+var c = [-5, -2, -10];
+
+
+function getMax(arr) {
+  var max = arr[0];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+
+
+console.log("Максимальное число",getMax(a));
+console.log("Максимальное число",getMax(b)); 
+console.log("Максимальное число",getMax(c)); 
+
