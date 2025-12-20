@@ -8,6 +8,7 @@ if (saved === "dark") {
   document.body.classList.remove("dark");
 }
 
+
 Btn.addEventListener("click", () => {
   if (document.body.classList.contains("dark")) {
     document.body.classList.remove("dark");
