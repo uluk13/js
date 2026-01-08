@@ -1,9 +1,18 @@
-body {
-  background: white;
-  color: black;
+body{
+  padding: 20px;
 }
 
-body.dark {
-  background: #111;
-  color: white;
+.block{
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  
+}
+
+.red{
+  background-color: red;
+}
+
+.card{
+  padding: 20px;
 }
